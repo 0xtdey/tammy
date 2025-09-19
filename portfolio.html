@@ -1,0 +1,52 @@
+---
+layout: default
+title: Portfolio
+permalink: /portfolio/
+---
+
+<header style="margin-bottom: 3rem;">
+    <h1 class="page-title">Portfolio</h1>
+    <p>A showcase of my projects, experiments, and professional work.</p>
+</header>
+
+{% if site.portfolio.size > 0 %}
+    <div class="portfolio-grid">
+        {% for project in site.portfolio %}
+            <article class="portfolio-card">
+                <h2><a href="{{ project.url | relative_url }}" style="color: var(--color-black); text-decoration: none;">{{ project.title }}</a></h2>
+                {% if project.excerpt %}
+                    <p>{{ project.excerpt | strip_html | truncatewords: 20 }}</p>
+                {% endif %}
+                
+                {% if project.technologies %}
+                    <div class="technologies" style="margin: 1rem 0;">
+                        {% for tech in project.technologies %}
+                            <span class="tech-tag">{{ tech }}</span>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+                
+                <div style="margin-top: 1rem;">
+                    {% if project.github %}
+                        <a href="{{ project.github }}" target="_blank" rel="noopener noreferrer" class="project-link" style="margin-right: 0.5rem;">GitHub</a>
+                    {% endif %}
+                    {% if project.demo %}
+                        <a href="{{ project.demo }}" target="_blank" rel="noopener noreferrer" class="project-link" style="margin-right: 0.5rem;">Demo</a>
+                    {% endif %}
+                    <a href="{{ project.url | relative_url }}" class="section-link">Read More →</a>
+                </div>
+                
+                {% if project.date %}
+                    <div style="margin-top: 1rem; font-size: 0.9rem; color: var(--color-gray-medium);">
+                        {{ project.date | date: "%B %Y" }}
+                    </div>
+                {% endif %}
+            </article>
+        {% endfor %}
+    </div>
+{% else %}
+    <div style="text-align: center; padding: 3rem; color: var(--color-gray-medium);">
+        <h2>Projects coming soon</h2>
+        <p>I'm working on some exciting projects. Check back soon!</p>
+    </div>
+{% endif %}

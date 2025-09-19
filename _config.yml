@@ -1,0 +1,47 @@
+# Site settings
+title: Tammy
+email: tammy@example.com
+description: "A minimalistic portfolio showcasing my work and thoughts"
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://tammy.github.io" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:categories/:title/
+
+# Collections
+collections:
+  portfolio:
+    output: true
+    permalink: /portfolio/:name/
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Tammy"
+  - scope:
+      path: ""
+      type: "portfolio"
+    values:
+      layout: "portfolio"

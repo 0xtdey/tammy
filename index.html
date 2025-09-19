@@ -1,0 +1,72 @@
+---
+layout: default
+title: Home
+---
+
+<section class="banner-section">
+    <div class="banner-container">
+        <img src="{{ '/banner.png' | relative_url }}" alt="Tammy's Banner" class="banner-image">
+    </div>
+</section>
+
+<section class="hero">
+    <h1 class="hero-title">Hello, I'm Tammy</h1>
+    <p class="hero-subtitle">Protocol Researcher passionate about making decentralized systems both secure and scalable—bridging deep technical research with practical, real-world adoption.</p>
+</section>
+
+<section class="sections-grid">
+    <div class="section-card">
+        <h2 class="section-title">Blog</h2>
+        <p>Thoughts, insights, and learnings from my journey in technology and beyond. I write about programming, design, and life experiences.</p>
+        {% assign recent_posts = site.posts | slice: 0, 3 %}
+        {% if recent_posts.size > 0 %}
+            <h3>Recent Posts:</h3>
+            <ul style="list-style: none; padding-left: 0;">
+                {% for post in recent_posts %}
+                    <li style="margin-bottom: 0.5rem;">
+                        <a href="{{ post.url | relative_url }}" class="section-link">{{ post.title }}</a>
+                        <div style="font-size: 0.9rem; color: var(--color-gray-medium);">{{ post.date | date: "%B %d, %Y" }}</div>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <p><a href="{{ '/blog/' | relative_url }}" class="section-link">View all posts →</a></p>
+    </div>
+
+    <div class="section-card">
+        <h2 class="section-title">Portfolio</h2>
+        <p>A showcase of my projects, experiments, and professional work. From web applications to creative coding projects.</p>
+        {% assign recent_portfolio = site.portfolio | slice: 0, 3 %}
+        {% if recent_portfolio.size > 0 %}
+            <h3>Featured Projects:</h3>
+            <ul style="list-style: none; padding-left: 0;">
+                {% for project in recent_portfolio %}
+                    <li style="margin-bottom: 0.5rem;">
+                        <a href="{{ project.url | relative_url }}" class="section-link">{{ project.title }}</a>
+                        {% if project.technologies %}
+                            <div style="font-size: 0.8rem; color: var(--color-gray-medium);">
+                                {{ project.technologies | join: ", " }}
+                            </div>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <p><a href="{{ '/portfolio/' | relative_url }}" class="section-link">View all projects →</a></p>
+    </div>
+
+    <div class="section-card">
+        <h2 class="section-title">About Me</h2>
+        <p>Discover my journey as a software engineer specializing in data analysis and user experience design. From healthcare systems to financial applications, I bring over a decade of expertise in crafting solutions that make complex data accessible and engaging.</p>
+        <p><a href="{{ '/about/' | relative_url }}" class="section-link">Get to know me →</a></p>
+    </div>
+</section>
+
+<section class="connect-section">
+    <h2 class="connect-heading">Let's Connect</h2>
+    <p>I'm always interested in new opportunities and conversations. Feel free to reach out!</p>
+    <div class="connect-links">
+        <a href="mailto:{{ site.email }}" class="project-link">Get in Touch</a>
+        <a href="https://github.com/tammy" target="_blank" rel="noopener noreferrer" class="project-link">GitHub</a>
+    </div>
+</section>
