@@ -2,8 +2,8 @@
 title: Tammy
 email: tammy@example.com
 description: "A minimalistic portfolio showcasing my work and thoughts"
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://tammy.github.io" # the base hostname & protocol for your site
+baseurl: "/tdeywebsite" # the subpath of your site, e.g. /blog
+url: "https://0xtdey.github.io" # the base hostname & protocol for your site
 
 # Build settings
 markdown: kramdown
