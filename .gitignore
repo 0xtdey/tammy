@@ -30,3 +30,5 @@ yarn-error.log*
 
 # Node modules (if using npm for any reason)
 node_modules/
+
+Guide.md 
