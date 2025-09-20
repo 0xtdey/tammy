@@ -1,6 +1,6 @@
 ---
 title: "Portfolio Website"
-date: 2024-01-01
+date: 2025-09-20
 technologies: ["Jekyll", "CSS3", "JavaScript", "GitHub Pages"]
 github: "https://github.com/yourusername/portfolio"
 demo: "https://yourusername.github.io"

@@ -49,4 +49,4 @@ portfolio-website/
 
 **Built with ❤️ using Jekyll and hosted on GitHub Pages.**
 
-_Last updated: September 2025_
+
