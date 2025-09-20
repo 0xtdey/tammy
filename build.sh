@@ -1,6 +1,11 @@
 #!/bin/bash
 set -e
 
+echo "Setting up environment..."
+export LANG=C.UTF-8
+export LC_ALL=C.UTF-8
+export RUBY_LOCALE=C.UTF-8
+
 echo "Installing Ruby and Bundler..."
 
 # Install Ruby if not present
@@ -21,6 +26,6 @@ echo "Installing dependencies..."
 bundle install
 
 echo "Building Jekyll site..."
-bundle exec jekyll build
+bundle exec jekyll build --verbose
 
 echo "Build complete!"

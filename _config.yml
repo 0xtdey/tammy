@@ -9,6 +9,18 @@ url: "https://0xtdey.github.io" # the base hostname & protocol for your site
 markdown: kramdown
 highlighter: rouge
 permalink: /:categories/:title/
+encoding: utf-8
+
+# Sass settings
+sass:
+  style: compressed
+  sass_dir: _sass
+  load_paths:
+    - _sass
+
+# Jekyll build settings
+theme:
+remote_theme:
 
 # Collections
 collections:
